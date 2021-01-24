@@ -28,5 +28,13 @@ public class PremiereOuvertureActivity extends AppCompatActivity {
         });
 
 
+        mButtonDecouvrirActivite.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getApplicationContext(),UserProfilActivity.class));
+            }
+        });
+
+
     }
 }

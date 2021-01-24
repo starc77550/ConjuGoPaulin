@@ -92,7 +92,7 @@ public class register extends AppCompatActivity {
 
 
 
-                UserHelperClass UserData= new UserHelperClass(AssoStatut, UserFirstName, UserEmail, UserPassword);
+                UserHelperClass UserData= new UserHelperClass(UserLastName, UserFirstName, UserEmail, UserPassword);
 
 
 
