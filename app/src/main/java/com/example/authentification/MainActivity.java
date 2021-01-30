@@ -17,6 +17,7 @@ import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.authentification.databinding.ActivityMainBinding;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.android.material.textfield.TextInputLayout;
@@ -33,29 +34,24 @@ import com.google.firebase.database.ValueEventListener;
 public class MainActivity extends AppCompatActivity {
     FirebaseDatabase rootNode;
     DatabaseReference reference;
-    TextView mHello;
-    Button mbouton4;
+
+    Button mBackToLobby;
     FirebaseAuth fAuth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         setContentView(R.layout.activity_main);
-        mHello = findViewById(R.id.textView);
-        mbouton4 = findViewById(R.id.button4);
+
+        mBackToLobby = findViewById(R.id.BackToLobby);
         fAuth = FirebaseAuth.getInstance();
         String UserIdKey= fAuth.getUid();
-        reference= FirebaseDatabase.getInstance().getReference().child("UserData").child(UserIdKey);
-        reference.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot datasnapshot) {
 
-                String name= datasnapshot.child("userLastName").getValue(String.class);
-                mHello.setText("Nom: "+" "+name);
-            }
-
+        mBackToLobby.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onCancelled(@NonNull DatabaseError error) {
+            public void onClick(View v) {
+                startActivity(new Intent(getApplicationContext(), CreationActivite_Activity.class));
 
             }
         });

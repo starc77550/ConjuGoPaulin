@@ -17,7 +17,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/button3"
+        android:id="@+id/button4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Déconnexion"
@@ -29,10 +29,10 @@
         android:onClick="logout"/>
 
     <Button
-        android:id="@+id/button4"
+        android:id="@+id/BackToLobby"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="ButtonTest"
+        android:text="Retour au menu"
         app:layout_constraintBottom_toTopOf="@+id/textView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"

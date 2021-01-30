@@ -10,7 +10,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Authentification">
-        <activity android:name=".UserProfilActivity"></activity>
+        <activity android:name=".CreationActivite_Activity"></activity>
+        <activity android:name=".UserProfilActivity" />
         <activity android:name=".PremiereOuvertureActivity" />
         <activity android:name=".SplashScreenActivity">
             <intent-filter>

@@ -6,66 +6,201 @@
     android:layout_height="match_parent"
     tools:context=".UserProfilActivity">
 
+
     <TextView
         android:id="@+id/UserProfilTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Votre profil"
+        android:textSize="50dp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.466"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.064" />
+        app:layout_constraintVertical_bias="0.07" />
 
-    <TextView
-        android:id="@+id/AffichageNomPrenom"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Nom Prénom"
-        app:layout_constraintBottom_toBottomOf="parent"
+    <ScrollView
+        android:id="@+id/scrollView2"
+        android:layout_width="match_parent"
+        android:layout_height="505dp"
+        app:layout_constraintEnd_toStartOf="@id/BackToMapButton"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/UserProfilTitle"
+        app:layout_constraintVertical_bias="0.20">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="20dp"
+            android:orientation="vertical"
+            >
+
+
+
+            <TextView
+                android:id="@+id/AffichageNomPrenom"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Nom Prénom"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/UtilisateurNomComplet"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:background="@android:color/darker_gray"
+                android:text="Votre Nom Prénom" />
+
+
+            <TextView
+                android:id="@+id/AffichageDescription"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="Une petite description de vous"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/UserDescription"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:ems="10"
+                android:hint="Description"/>
+
+
+            <TextView
+                android:id="@+id/AffichageEmail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="Adresse mail"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/UtilisateurEmail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@android:color/darker_gray"
+                android:text="Votre Adresse mail" />
+
+            <TextView
+                android:id="@+id/AffichagePhone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="Numéro de téléphone"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/UtilisateurActuelPhone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@android:color/darker_gray"
+                android:text="Votre numéro de téléphone" />
+
+            <EditText
+                android:id="@+id/UserPhoneUpdated"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:ems="10"
+                android:hint="Saisissez votre nouveau numéro " />
+
+
+            <TextView
+                android:id="@+id/AffichageChangeEmail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="Changer votre adresse mail"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/UserEmailUpdated"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:ems="10"
+                android:hint="Saisissez votre nouvelle adresse mail" />
+
+            <EditText
+                android:id="@+id/UserEmailUpdated2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:ems="10"
+                android:hint="Saisissez à nouveau votre adresse mail" />
+
+            <EditText
+                android:id="@+id/UserPasswordCheck"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:inputType="textPassword"
+                android:ems="10"
+                android:hint="Mot de Passe"
+                />
+
+
+
+            <Button
+                android:id="@+id/UserEmailUpdatedButton"
+                android:layout_width="300dp"
+                android:layout_gravity="center"
+
+                android:layout_marginTop="20dp"
+                android:layout_height="wrap_content"
+                android:text="Mettre à jour votre adresse mail"
+                android:textSize="13dp"
+                />
+
+
+            <Button
+                android:id="@+id/PasswordChangeButton"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="50dp"
+                android:text="Changer de mot de passe"
+                android:textSize="13dp" />
+
+
+        </LinearLayout>
+
+
+    </ScrollView>
+
+    <Button
+        android:id="@+id/BackToMapButton"
+        android:layout_width="134dp"
+        android:layout_height="43dp"
+        android:layout_marginTop="656dp"
+        android:text="Retour"
+        android:textSize="13dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.167"
+        app:layout_constraintHorizontal_bias="0.245"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.153" />
+        app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/UtilisateurNomComplet"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:text="Votre Nom Prénom"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/AffichageNomPrenom"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/AffichageNomPrenom"
-        app:layout_constraintTop_toBottomOf="@+id/AffichageNomPrenom"
-        app:layout_constraintVertical_bias="0.0" />
+    <Button
+        android:id="@+id/SaveModificationUserProfilButton"
+        android:layout_width="134dp"
+        android:layout_height="43dp"
+        android:layout_marginTop="656dp"
+        android:text="Enregistrer"
+        android:textSize="13dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.453"
+        app:layout_constraintLeft_toRightOf="@+id/BackToMapButton"
+        app:layout_constraintStart_toEndOf="@+id/BackToMapButton"
+        app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/AffichageEmail"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="28dp"
-        android:text="Adresse mail"
-        app:layout_constraintEnd_toEndOf="@+id/AffichageNomPrenom"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/AffichageNomPrenom"
-        app:layout_constraintTop_toBottomOf="@+id/UtilisateurNomComplet" />
-
-    <TextView
-        android:id="@+id/UtilisateurEmail"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="420dp"
-        android:text="Votre Adresse mail"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/UtilisateurNomComplet"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/UtilisateurNomComplet"
-        app:layout_constraintTop_toBottomOf="@+id/AffichageEmail"
-        app:layout_constraintVertical_bias="0.311" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 

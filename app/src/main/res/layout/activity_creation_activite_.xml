@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CreationActivite_Activity">
+
+    <ImageView
+        android:id="@+id/image_icon2"
+        android:layout_width="53dp"
+        android:layout_height="47dp"
+        android:src="@drawable/logo"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.996"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.001" />
+
+    <TextView
+        android:id="@+id/CreationActiviteTitre"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Créer une nouvelle activité"
+        android:textSize="30dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.489"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.099" />
+
+    <Button
+        android:id="@+id/button3"
+        android:layout_width="77dp"
+        android:layout_height="42dp"
+        android:text="Supprimer"
+        android:textSize="6dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/image_icon2"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.001" />
+
+    <Button
+        android:id="@+id/AnnulerButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Annuler"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.245"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="656dp"
+
+    />
+
+    <ScrollView
+        android:id="@+id/scrollView3"
+        android:layout_width="match_parent"
+        android:layout_height="514dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/CreationActiviteTitre"
+        app:layout_constraintVertical_bias="0.074">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:orientation="vertical">
+
+            <EditText
+                android:id="@+id/EditActivityName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Nom de l'activité" />
+
+
+            <TextView
+                android:id="@+id/creationActiviteTheme"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="Thème(s)" />
+
+
+            <androidx.gridlayout.widget.GridLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <CheckBox
+                    android:id="@+id/checkBoxSport"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Sport"
+                    app:layout_column="0"
+                    app:layout_row="0" />
+
+                <CheckBox
+                    android:id="@+id/checkBoxCulture"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Culture"
+                    app:layout_column="1"
+                    app:layout_row="0" />
+
+                <CheckBox
+                    android:id="@+id/checkBoxMusique"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Musique"
+                    app:layout_column="2"
+                    app:layout_row="0" />
+
+                <CheckBox
+                    android:id="@+id/checkBoxEducation"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Education"
+                    app:layout_column="3"
+                    app:layout_row="0" />
+
+
+                <CheckBox
+                    android:id="@+id/checkBoxJeuxDeSociete"
+                    android:layout_width="82dp"
+                    android:layout_height="wrap_content"
+                    android:text="Jeux de société"
+                    app:layout_column="0"
+                    app:layout_row="1" />
+
+
+                <CheckBox
+                    android:id="@+id/checkBoxPleinAir"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="Plein air"
+                    app:layout_column="1"
+                    app:layout_row="1" />
+
+
+            </androidx.gridlayout.widget.GridLayout>
+
+            <EditText
+                android:id="@+id/EditNumberOfParticipant"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:ems="10"
+                android:hint="Nonmbre de participants" />
+
+
+            <EditText
+                android:id="@+id/EditActivityDescription"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:ems="10"
+                android:hint="Description de l'activité" />
+
+            <EditText
+                android:id="@+id/editTextDate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:ems="10"
+                android:hint="Date"
+                android:inputType="date"
+
+
+                />
+
+            <Button
+                android:id="@+id/MiseEnLigneActiviteButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Mise en ligne" />
+
+
+        </LinearLayout>
+    </ScrollView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
