@@ -56,6 +56,7 @@ public class register extends AppCompatActivity {
         mUserEmail = findViewById(R.id.editTextEmailAddress);
         mUserPassword = findViewById(R.id.editTextTextPassword);
 
+
         mRegister =findViewById(R.id.textView2);
         mSortirInscription=findViewById(R.id.SortirInscription);
         mEditTelephone=findViewById(R.id.EditTelephone);
@@ -65,9 +66,6 @@ public class register extends AppCompatActivity {
         mswitch1 = findViewById(R.id.switch1);
 
         fAuth = FirebaseAuth.getInstance();
-
-
-
 
         mRegisterBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -144,6 +142,7 @@ public class register extends AppCompatActivity {
 
             }
         });
+
         mLoginBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
