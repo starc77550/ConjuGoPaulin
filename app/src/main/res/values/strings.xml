@@ -7,6 +7,15 @@
     <string name="next">Next</string>
     <string name="previous">Previous</string>
 
+    <string-array name="frequence">
+        <item>Ponctuel</item>
+        <item>Quotidien</item>
+        <item>hebdomadaire</item>
+        <item>Mensuel</item>
+        <item>Annuel</item>
+    </string-array>
+
+
     <string name="hello_first_fragment">Hello first fragment</string>
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
     <string name="title_activity_scrolling_user_profil">ScrollingActivity</string>
