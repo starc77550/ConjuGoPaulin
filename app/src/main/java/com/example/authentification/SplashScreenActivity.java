@@ -42,7 +42,7 @@ public class SplashScreenActivity extends AppCompatActivity {
                 //Démarrer un page
 
                 if(user!= null) {
-                    Intent intent = new Intent(getApplicationContext(), UserProfilActivity.class);
+                    Intent intent = new Intent(getApplicationContext(), MapsActivity.class);
                     startActivity(intent);
                     finish();
                 }else {

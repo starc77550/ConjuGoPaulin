@@ -114,7 +114,7 @@ mail=email.substring(0,1)+etoile+email.substring(place-1);
         mBackToMapButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(getApplicationContext(), PremiereOuvertureActivity.class));
+                startActivity(new Intent(getApplicationContext(), MapsActivity.class));
 
             }
         });

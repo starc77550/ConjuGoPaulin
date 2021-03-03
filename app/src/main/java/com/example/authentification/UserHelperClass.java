@@ -2,6 +2,7 @@ package com.example.authentification;
 
 public class UserHelperClass {
     String UserLastName, UserFirstName, UserEmail, UserPassword,AssoStatut, UserPhoneNumber;
+
     public UserHelperClass() {
 
     }

@@ -5,38 +5,21 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.DatePickerDialog;
 import android.content.Intent;
-import android.graphics.Color;
-import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
-import android.util.Log;
-import android.view.View;
-import android.content.Intent;
-import android.os.Bundle;
-import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
-import android.widget.DatePicker;
-import android.widget.EditText;
-import android.widget.ProgressBar;
-import android.widget.Switch;
-import android.widget.TextView;
-import android.widget.Toast;
 
 import com.example.authentification.databinding.ActivityMainBinding;
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
-import com.google.android.material.textfield.TextInputLayout;
-import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
-
-import java.util.Calendar;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+import com.firebase.ui.database.FirebaseRecyclerOptions;
+import com.google.firebase.database.Query;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -46,6 +29,9 @@ public class MainActivity extends AppCompatActivity {
     Button mBackToLobby;
     FirebaseAuth fAuth;
 
+    private RecyclerView recyclerView;
+    personAdapter adapter; // Create Object of the Adapter class
+long  NumbreOfActiviy;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -59,6 +45,55 @@ public class MainActivity extends AppCompatActivity {
         mBackToLobby = findViewById(R.id.BackToLobby);
         fAuth = FirebaseAuth.getInstance();
         String UserIdKey= fAuth.getUid();
+
+        rootNode=FirebaseDatabase.getInstance();
+
+        reference= FirebaseDatabase.getInstance().getReference().child("Activité");
+
+        /**********************/
+
+
+            // Create a instance of the database and get
+            // its reference
+
+            recyclerView = findViewById(R.id.recycler1);
+
+            // To display the Recycler view linearly
+            recyclerView.setLayoutManager(
+                    new LinearLayoutManager(this));
+
+            // It is a class provide by the FirebaseUI to make a
+            // query in the database to fetch appropriate data
+            FirebaseRecyclerOptions<person> options
+                    = new FirebaseRecyclerOptions.Builder<person>()
+                    .setQuery(reference, person.class)
+                    .build();
+            // Connecting object of required Adapter class to
+            // the Adapter class itself
+            adapter = new personAdapter(options);
+            // Connecting Adapter class with the Recycler view*/
+            recyclerView.setAdapter(adapter);
+
+
+
+        /********************/
+
+        reference.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot datasnapshot) {
+                if(datasnapshot.exists()){
+                    NumbreOfActiviy=(datasnapshot.getChildrenCount());
+                }
+
+
+            }
+
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
 
         mBackToLobby.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -76,13 +111,20 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        binding.GoToMapButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getApplicationContext(), MapsActivity.class));
+
+            }
+        });
         binding.TestButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                rootNode=FirebaseDatabase.getInstance();
-                reference=rootNode.getReference( "UserData");
-               Query resultat =reference.orderByChild("assoStatut").equalTo("oui");
-                binding.TestView.setText("n");
+
+
+                binding.TestView.setText( Long.toString(NumbreOfActiviy));
+
             }
         });
 
@@ -91,7 +133,21 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
+    // Function to tell the app to start getting
+    // data from database on starting of the activity
+    @Override protected void onStart()
+    {
+        super.onStart();
+        adapter.startListening();
+    }
 
+    // Function to tell the app to stop getting
+    // data from database on stoping of the activity
+    @Override protected void onStop()
+    {
+        super.onStop();
+        adapter.stopListening();
+    }
 
 
     public void logout(View view) {
@@ -99,5 +155,7 @@ public class MainActivity extends AppCompatActivity {
         startActivity(new Intent(getApplicationContext(),login.class));
         finish();
     }
+
+
 
 }

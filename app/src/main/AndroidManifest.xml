@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.authentification">
 
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
@@ -10,9 +12,18 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Authentification">
-        <activity android:name=".CreationActivite_Activity"></activity>
+        <activity android:name=".Mes_Activites_Activity"></activity>
+        <activity android:name=".CreationActivite_Activity" />
+        <activity android:name=".DetailsActivity" />
+
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyCpJ_U-ibuYPmV4g1N52eC5wzlk5P-BoZo" />
+
         <activity android:name=".UserProfilActivity" />
+        <activity android:name=".MapsActivity" />
         <activity android:name=".PremiereOuvertureActivity" />
+        <activity android:name=".Contact_Activity" />
         <activity android:name=".SplashScreenActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

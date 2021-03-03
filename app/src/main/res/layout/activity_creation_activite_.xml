@@ -25,7 +25,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Créer une nouvelle activité"
-        android:textSize="60px"
+        android:textSize="30px"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -282,7 +282,16 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Mise en ligne"
-                android:layout_marginBottom="100dp"
+
+                />
+
+            <Button
+                android:id="@+id/SaveModeleButtom"
+                android:layout_marginTop="20dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Sauvegarder le modèle"
+                android:layout_marginBottom="80dp"
                 />
 
 
