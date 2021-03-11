@@ -22,11 +22,11 @@ public class CustomErrorPopUp extends Dialog{
     public CustomErrorPopUp(Activity activity){
         super(activity, R.style.Theme_AppCompat_Dialog);
         setContentView(R.layout.error_popup_template);
-            this.Titre="veuillez corriger les éléments suivant";
-            this.ErrorMessages="Les erreurs sont:";
-            this.OKButton=findViewById(R.id.OKbuttom);
-            this.mErrorMessages=findViewById(R.id.ErrorMessages);
-            this.mErrorTilte=findViewById(R.id.ErrorTilte);
+        this.Titre="veuillez corriger les éléments suivant";
+        this.ErrorMessages="Les erreurs sont:";
+        this.OKButton=findViewById(R.id.OKbuttom);
+        this.mErrorMessages=findViewById(R.id.ErrorMessages);
+        this.mErrorTilte=findViewById(R.id.ErrorTilte);
 
     }
 

@@ -1,17 +1,19 @@
 package com.example.authentification;
 
 public class ActivityCreationHelperClass {
-    String NomDactivite, DescriptionActivite,DateActivite,NumberOfParticipantActivite,FrequenceActivite,AdresseActivite,TarifActivite, AdaptedHandicaped, AuteurID,ActivityStatuts ;
+    String NomDactivite, DescriptionActivite,DateActivite,NumberOfParticipantActivite,FrequenceActivite, Theme, AdresseActivite,TarifActivite, AdaptedHandicaped, AuteurID,ActivityStatuts ;
 
     public ActivityCreationHelperClass() {
     }
 
-    public ActivityCreationHelperClass(String nomDactivite, String descriptionActivite, String dateActivite, String numberOfParticipantActivite, String frequenceActivite, String adresseActivite, String tarifActivite, String adaptedHandicaped, String auteurID, String activityStatuts) {
+    public ActivityCreationHelperClass(String nomDactivite, String descriptionActivite, String dateActivite, String numberOfParticipantActivite, String frequenceActivite, String theme, String adresseActivite, String tarifActivite, String adaptedHandicaped, String auteurID, String activityStatuts) {
+
         NomDactivite = nomDactivite;
         DescriptionActivite = descriptionActivite;
         DateActivite = dateActivite;
         NumberOfParticipantActivite = numberOfParticipantActivite;
         FrequenceActivite = frequenceActivite;
+        Theme = theme;
         AdresseActivite = adresseActivite;
         TarifActivite = tarifActivite;
         AdaptedHandicaped = adaptedHandicaped;
@@ -37,6 +39,10 @@ public class ActivityCreationHelperClass {
 
     public String getFrequenceActivite() {
         return FrequenceActivite;
+    }
+
+    public String getTheme() {
+        return Theme;
     }
 
     public String getAdresseActivite() {

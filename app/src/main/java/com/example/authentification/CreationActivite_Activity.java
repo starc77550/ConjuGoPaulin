@@ -86,6 +86,7 @@ public class CreationActivite_Activity extends AppCompatActivity  implements Ada
                    AdaptedHandicaped="oui" ;
                 }
 
+                String theme= resultat.toString();
 
                 String NomDactivite= binding.EditActivityName.getText().toString();
                 String DescriptionActivite= binding.EditActivityDescription.getText().toString();
@@ -116,7 +117,7 @@ public class CreationActivite_Activity extends AppCompatActivity  implements Ada
                 });
 
                 ActivityStatuts="A venir";
-                ActivityCreationHelperClass ActivityDataSender= new ActivityCreationHelperClass(NomDactivite, DescriptionActivite,DateActivite,NumberOfParticipantActivite,FrequenceActivite,AdresseActivite,TarifActivite, AdaptedHandicaped,fAuth.getUid(), ActivityStatuts);
+                ActivityCreationHelperClass ActivityDataSender= new ActivityCreationHelperClass(NomDactivite, DescriptionActivite,DateActivite,NumberOfParticipantActivite,FrequenceActivite, theme, AdresseActivite,TarifActivite, AdaptedHandicaped,fAuth.getUid(), ActivityStatuts);
                 rootNode= FirebaseDatabase.getInstance();
                 reference=rootNode.getReference( "Activité");
                 reference.child(String.valueOf(NumbreOfActiviy+1)).setValue(ActivityDataSender);
@@ -153,7 +154,7 @@ public class CreationActivite_Activity extends AppCompatActivity  implements Ada
                 if(binding.AdaptedHandicaped.isChecked()){
                     AdaptedHandicaped="oui" ;
                 }
-
+                String theme= resultat.toString();
 
                 String NomDactivite= binding.EditActivityName.getText().toString();
                 String DescriptionActivite= binding.EditActivityDescription.getText().toString();
@@ -167,7 +168,7 @@ public class CreationActivite_Activity extends AppCompatActivity  implements Ada
 
                 ActivityStatuts="Brouillon";
                 String ActiviteId=Long.toString(NumbreOfActiviy+1);
-                ActivityCreationHelperClass ActivityDataSender= new ActivityCreationHelperClass(NomDactivite, DescriptionActivite,DateActivite,NumberOfParticipantActivite,FrequenceActivite,AdresseActivite,TarifActivite, AdaptedHandicaped,fAuth.getUid(), ActivityStatuts);
+                ActivityCreationHelperClass ActivityDataSender= new ActivityCreationHelperClass(NomDactivite, DescriptionActivite,DateActivite,NumberOfParticipantActivite,FrequenceActivite, theme, AdresseActivite,TarifActivite, AdaptedHandicaped,fAuth.getUid(), ActivityStatuts);
                 rootNode= FirebaseDatabase.getInstance();
                 reference=rootNode.getReference( "Activité");
 
